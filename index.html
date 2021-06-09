@@ -3,45 +3,128 @@
     <head>
       <title>techwithsrija </title>
     </head>
+    <style>
+      body {
+          background: linear-gradient(to bottom, #0099ff 0%, #ff99cc 100%);
+          margin-bottom:300px;
+          color: rgb(45, 45, 45);
+          padding: 10px;
+          font-family: courier;
+        
+      }
+      #all-contents {
+          max-width: 1000px;
+          margin: auto;
+      }
+
+      
+      /* navigation menu */
+      nav {
+          background: rgb(242, 5, 124);
+          /* rgb(57, 219, 219);  */
+          margin: 3px;
+          margin-bottom: 3px;
+          display: flex;
+          padding: 10px;
+          font-family: courier;
+          font-size: 25px;
+      }
+      h1 {
+          display: flex;
+          align-items: center;
+          color: white;
+          flex: 1;
+          margin: 0;
+      }
+      #nav-ul {
+          list-style-image: none;
+      }
+      .nav-li {
+          display: inline-block;
+          padding: 0 10px;
+      }
+      a {
+          text-decoration: none;
+          color: #fff;
+      }
+  
+      /* main container area beneath menu */
+      main {
+          background:rgb(255, 102, 163);
+          display: flex;
+      }
+      .sidebar {
+          margin-right: 25px;
+          padding: 10px;
+      }
+      .sidebar-img {
+          width: 300px;
+          
+      }
+
+      img {
+        width: 210px;         
+        border-radius: 25px;
+        background: white;
+        padding: 5px; 
+        width: 200px;
+        height: 200px;  
+
+      }
+      .content {
+          flex: 1;
+          padding: 15px;
+          color: white;
+          
+      }
+      #interests {
+          padding: 8px;
+      }
+      h2, h3 {
+          margin: 0px;
+      }
+  </style>
+  
     
     <body>
       <!-- All contents of the site goes under here between the body tags -->
-      <div>
+      <div id="all-contents">
         
         <nav>
           <!-- the site navigation menu  -->
           <h1>Welcome!</h1>
-          <ul>
-             <!-- the home menu link  -->
-            <li>
-              <a href="index.html"> Home </a>
-            </li>
+          <ul id="nav-ul">
+            <!-- the home menu link  -->
+           <li class="nav-li">
+             <a href="index.html"> Home </a>
+           </li>
 
-            <!-- portfolio menu link -->
+           <!-- portfolio menu link -->
 
-            <li>
-              <a href="portfolio.html"> Portfolio </a>
-            </li>
+           <li class="nav-li">
+             <a href="portfolio.html"> Portfolio </a>
+           </li>
 
-          </ul>
+         </ul>
 
         </nav>
 
+
         <main> 
           <!-- the main content of site  -->
-          <div>
+          <div class="sidebar">
             <!-- sidebar section -->
-            <img src="https://yt3.ggpht.com/yti/ANoDKi5TM-m5e7sGQSruif9IbhM5z6HlN0IgrW7dXxJ5pA=s88-c-k-c0x00ffffff-no-rj-mo">
+            <img class="sidebar=img"src="https://yt3.ggpht.com/yti/ANoDKi5TM-m5e7sGQSruif9IbhM5z6HlN0IgrW7dXxJ5pA=s88-c-k-c0x00ffffff-no-rj-mo">
 
           </div>
 
-          <div> 
+          <div class="content"> 
             <!-- content section  -->
             <h2> Srija </h2>
             <p>Student at Patrick F. Taylor Academy</p>
 
             <!-- Interests Section -->
-            <div>
+            <div id="interests">
               <h3>My interests!</h3>
               <ul>
                 <li>Swimming</li> 
