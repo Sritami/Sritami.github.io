@@ -63,6 +63,7 @@
 			// TODO 2 - Variable declarations 
 			var positionX = 0;
 			var points = 0;
+			var speed = 10;
 
 			
 			/* 
@@ -71,8 +72,15 @@
 			turn it around! 
 			*/
 			function update() {
-				positionX = positionX + 10
+				positionX = positionX + speed;
 				moveBoxTo(positionX);
+				if (positionX > boardWidth) {
+					speed = -speed; //changing direction of box to be negative when it hits right wall
+				}
+
+				if (positionX <= 0) {
+					speed = speed * -1; //changing direction of speed to be positive when hits left wall
+				}
 
 			};
 
@@ -85,6 +93,7 @@
 				positionX = 0;
 				points = points + 1;
 				changeBoxText(points);
+				speed = speed + 3;
 			
 
 			};
