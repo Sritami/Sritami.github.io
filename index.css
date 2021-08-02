@@ -7,12 +7,13 @@ body, html {
 
 }
 
+/* INTRO SECTION */
 .section-top {
   width: 100%;
   height: 100%;
   max-height: 30em;
   z-index: -3;
-  postition: absolute;
+  position: absolute;
   background-color: #5E17EB;
 }
 
@@ -22,6 +23,10 @@ body, html {
   animation-delay: 3s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
+}
+
+* {
+  box-sizing: border-box;
 }
   
 
@@ -122,12 +127,12 @@ body, html {
   }
 
   50% {
-    opacity: 1
+    opacity: 1;
     transform: translate(0%, -20px);
   }
 
   100% {
-    opacity: 1
+    opacity: 1;
     transform: translate(0%, -90px);
 
   }
@@ -143,259 +148,53 @@ body, html {
   }
 
   50% {
+    transform: translate(-100px, 0px);
+  }
+
+  100% {
     transform: translate(-150px, 0px);
-  }
-
-  100% {
-    transform: translate(-300px, 0px);
 
   }
 }
 
 
-.circle1 {
-  position: absolute;
-  height: 300px;
-  width: 646px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 300px 0 0 300px;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */
-  margin-right: -1000px;
-  transform: translate(720px, -600px);
-  animation-name: circle1;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  
-}
 
-.circle2 {
-  position: absolute;
-  height: 375px;
-  width: 535px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 300px 0 0 300px;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(831px, -440px);
-  animation-name: circle2;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  
-}
-
-.circle3 {
-  position: absolute;
-  height: 150px;
-  width: 300px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 300px 300px 0 0;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: -52px;
-  /* transform: rotate(-90deg); */
-  margin-right: -1000px;
-  transform: translate(820px, -215px);
-   animation-name: circle3;
-  animation-iteration-count: infinite;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  
-  
-}
-
-.circle4 {
-  width: 55px;
-  height: 30px;
-  position: absolute;
-  border-radius: 50px 50px 0 0;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(500px, -425px);
-  animation-name: half-circle-scale;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  
-}
-
-.circle5 {
-  position: absolute;
-  height: 55px;
-  width: 55px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
+.intro-pic {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  transform: translate(910px, -400px);
+  animation-fill-mode: forwards;
   border-radius: 50%;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(700px, -230px);
-  animation-name: scale;
-  animation-iteration-count: infinite;
+  animation-name: pic-rise;
+  animation-delay: 3s;
   animation-duration: 3s;
   animation-timing-function: linear;
-  
 }
 
-.circle6 {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 50%;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(650px, -450px);
-  animation-name: scale;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  
-}
-
-.circle7 {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 50%;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(540px, -170px);
-  animation-name: scale;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  
-}
-
-.circle8 {
-  position: absolute;
-  height: 30px;
-  width: 30px;
-  /* height: 535px;
-  width: 518px; */
-  /* border-radius: 400px 400px 0 0; */
-  border-radius: 50%;
-  background-color: white;
-  margin-top: 100px;
-  margin-right: 0px;
-  margin-left: 0px;
-  /* transform: rotate(-90deg); */;
-  transform: translate(650px, -310px);
-  animation-name: scale;
-  animation-iteration-count: infinite;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  
-  
-}
-
-@keyframes circle1 {
+@keyframes pic-rise {
   0% {
-   border-radius: 100px 0 0 100px;
-  }
+    transform: translate(910px, -400px);
+  
+  } 
+
+  25% {
+    transform: translate(850px, -400px);
+  } 
 
   50% {
-    border-radius: 200px 0 0 200px;
+    transform: translate(800px, -400px);
   }
   100% {
-    border-radius: 100px 0 0 100px;
+    transform: translate(730px, -400px);
   }
 }
 
+/* ADD LATER: add some cool artistry floruises by pic
+that changes when you hover over them */
 
 
-@keyframes circle2 {
-  0% {
-    border-radius: 100px 0 0 100px;
-  }
-
-  50% {
-    border-radius: 200px 0 0 200px;
-  }
-
-  100% {
-    border-radius: 100px 0 0 100px;
-  }
-}
-
-@keyframes circle3 {
-  0% {
-    border-radius: 100px 100px 0 0;
-  }
-
-  50% {
-    border-radius: 200px 200px 0 0;
-  }
-
-  100% {
-    border-radius: 100px 100px 0 0;
-  }
-}
-
-
-@keyframes scale {
-  0% {
-    border-radius: 70%;
-  }
-
-  50% {
-    border-radius: 30%;
-  }
-
-  100% {
-    border-radius: 70%;
-  }
-}
-
-@keyframes half-circle-scale {
-  0% {
-    border-radius: 10px 10px 0 0;
-  }
-
-  50% {
-   border-radius: 30px 30px 0 0;
-  }
-
-  100% {
-   border-radius: 10px 10px 0 0;
-  }
-}
-
-
-
+/* ABOUT US SECTION */
 
 
 
