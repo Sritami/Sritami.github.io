@@ -4,7 +4,7 @@ body, html {
   font-family: sans-serif;
   width: 100%;
   height: 100%;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 
 }
 
@@ -25,7 +25,6 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: #5E17EB;
   display: flex;
   justify-content: right;
@@ -35,19 +34,15 @@ ul {
   padding-right: 20px;
 }
 
-li {
-  float: left;
-}
 
 li a {
-  display: block;
   color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 li a:hover {
@@ -74,9 +69,9 @@ li a:hover {
   animation-timing-function: linear;
 }
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
   
 
 
@@ -332,8 +327,71 @@ that changes when you hover over them */
 
 }
 
+/* PROJECTS SECTION */
 
+.projects-section {
+  width: 100%;
+  height: 40em;
+  margin-top: 78em;
+  position: absolute;
+  background-color: #5E17EB;
+}
 
+.projects-header {
+  color: white;
+  margin-right: 200px;
+  font-size: 50px;
+  display: flex;
+  justify-content: flex-end;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-260px, -5px); */
+  transform: translate(-350px, 10px);
+}
+
+.portfolio {
+  list-style-type: none;
+  display: flex;
+  margin-left: 20px;
+  
+}
+
+.portfolio li {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  /* margin-bottom: 10px; */
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  margin: 10px;
+}
+            
+.portfolio li:hover {
+  background: #eee;
+} 
+            
+.portfolio a {
+  text-decoration: none;
+  color: #454545;
+  
+}
+
+.projects-rectangle {
+  height: 40px;
+  width: 245px;
+  background-color: #FFAB24;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 200px;
+  align-self: flex-end;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-250px, 100px); */
+  transform: translate(-342px, 115px);
+
+}
 
 
 
