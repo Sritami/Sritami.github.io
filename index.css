@@ -279,7 +279,7 @@ that changes when you hover over them */
   background-color: #F94144;
 }
 
-.about-rectangle {
+/* .about-rectangle {
   height: 35px;
   width: 250px;
   background-color: #5E17EB;
@@ -290,10 +290,9 @@ that changes when you hover over them */
   align-self: flex-end;
   top: 50%;
   left: 50%;
-  /* transform: translate(-250px, 100px); */
   transform: translate(-100px, 100px);
 
-}
+} */
 
 .about-me {
   color: white;
@@ -305,6 +304,7 @@ that changes when you hover over them */
   left: 50%;
   /* transform: translate(-260px, -5px); */
   transform: translate(-120px, -5px);
+  text-shadow: #5E17EB 5px 5px 0px;
 
 }
 
@@ -351,7 +351,7 @@ that changes when you hover over them */
 }
 
 .projects-header {
-  color: white;
+  color: #FFDE59;
   margin-right: 200px;
   font-size: 50px;
   display: flex;
@@ -360,6 +360,7 @@ that changes when you hover over them */
   left: 50%;
   /* transform: translate(-260px, -5px); */
   transform: translate(-350px, 10px);
+  text-shadow: white 5px 5px 0px;
 }
 
 .portfolio {
@@ -390,7 +391,7 @@ that changes when you hover over them */
   
 }
 
-.projects-rectangle {
+/* .projects-rectangle {
   height: 40px;
   width: 245px;
   background-color: #FFAB24;
@@ -401,12 +402,73 @@ that changes when you hover over them */
   align-self: flex-end;
   top: 50%;
   left: 50%;
-  /* transform: translate(-250px, 100px); */
   transform: translate(-342px, 115px);
 
+} */
+
+/* EXTRACURRICULAR SECTION */
+
+.extracurricular-section {
+  width: 100%;
+  height: 40em;
+  margin-top: 118em;
+  position: absolute;
+  background-color: #F94144;
+  /* background-color would be white, with pink text or purple text */
 }
 
+/* .content-rectangle {
+  height: 40px;
+  width: 350px;
+  background-color: #5E17EB;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 200px;
+  align-self: flex-end;
+  top: 50%;
+  left: 50%;
+  transform: translate(-342px, 115px);
+} */
 
+.extracurricular-title {
+  color: white;
+  /* margin-right: 200px; */
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-400px, -5px);
+  text-shadow: #5E17EB 5px 5px 0px;
+}
+
+/* CONTACT SECTION */
+
+
+.contact-section {
+  width: 100%;
+  height: 20em;
+  margin-top: 158em;
+  position: absolute;
+  background-color: #5A05AD;
+}
+
+.contact-title {
+  color: white;
+  /* margin-right: 200px; */
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  top: 50%;
+  left: 50%; 
+  transform: translate(0px, -5px);
+  text-shadow: #F94144  5px 5px 0px;
+}
 
 
 
