@@ -10,6 +10,7 @@ body, html {
 
 body::-webkit-scrollbar-track{
   background: #F94144;
+  width: 0.09in;
 }
 
 body::-webkit-scrollbar-thumb{
@@ -17,12 +18,13 @@ body::-webkit-scrollbar-thumb{
 }
 
 body::-webkit-scrollbar {
-  width: 0.0625in;
+  /* width: 0.0625in; */
+  width: 0.09in;
 }
 
-a:link {
+/* a:link {
   text-decoration: none;
-}
+} */
 /* NAV BAR  */
 
 
@@ -280,10 +282,15 @@ li a:hover {
 }
 
 .top-section-button:hover {
-  background: #F94144;
+  background: #0F0F0F; 
   color: white;
 
 
+}
+
+.top-section-button a {
+  text-decoration: none;
+  
 }
 
 
@@ -482,7 +489,8 @@ that changes when you hover over them */
   height: 20em;
   margin-top: 158em;
   position: absolute;
-  background-color: #5A05AD;
+  /* background-color: #5A05AD; */
+  background-color: #0F0F0F;
 }
 
 .contact-title {
@@ -496,7 +504,7 @@ that changes when you hover over them */
   top: 50%;
   left: 50%; 
   transform: translate(0px, -5px);
-  text-shadow: #FFAB24  5px 5px 0px;
+  /* text-shadow: #FFAB24  5px 5px 0px; */
 }
 
 
