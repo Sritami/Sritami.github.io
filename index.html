@@ -13,7 +13,13 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-      <!-- might have to add the css in style tags -->
+    
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+      <!-- <script src="/index.js" defer></script> -->
+
+      <script src="index.js"></script>
+
+      
     </head>
 
     <style> 
@@ -26,34 +32,81 @@
     }
     </style>
     <body>
-    
-    
-      <div class="section-top"> 
+     <header>  
+        <nav id="nav-bar">
+          <ul> 
+            <li>
+              <a href="#about-me">About Me</a> 
+              </li>
+
+              <li>
+                <a href="#projects">Projects</a> 
+              </li>
+
+              <li>
+                <a href="#extracurricular-section">My Experience</a> 
+              </li>
+
+              <li>
+                <a href="#contact-section">Contact</a> 
+              </li>
+          </ul> 
+        </nav>  
+     </header>
+        
+           
+      <div class="section-top">     
         <div class="title">
           <div class="name-rectangle">
           </div>
 
           <div>
             <h1 class="title-name">Srija <br/>Tamidela </h1>
-            <h3 class="title-caption">a coding student</h3>
+            <h3 class="title-caption">Aspiring Computer Science Major</h3>
+            <button class="top-section-button">Skills</button>
+            <button class="top-section-button">My Content</button>
+            <button class="top-section-button">
+              <a href="#contact-section">Contact</a> 
+            </button>
           </div>
         </div>
 
         <img class="intro-pic" src="./img/circle-srija.jpg">
+    
 
       </div> 
 
       <div class="section-two"> 
         <div class="about-rectangle"></div>
-        <h1 class="about-me"> About Me </h1>
-        <p class="about-paragraph"> Hi, I am <strong>Srija Tamidela!</strong> meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout meabout me</p>
+        <h1 class="about-me" id="about-me"> About Me </h1>
+        <p class="about-paragraph"> Hi, I am <strong>Srija Tamidela!</strong> meLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <div class="pic-circle"></div>
         <img class="about-pic" src="./img/srija-pic2.PNG">
+      </div>
+
+      <div class= "projects-section"> 
+        <div class="projects-rectangle"></div>
+        <h1 class="projects-header" id="projects">Projects </h1>
+        <ul class="portfolio">
+          <li><a target="_blank" href="projects/platformer/">Platformer : A cannon - dodging, collectible - grabbing adventure game for Halleb0t</a></li>
+          <li><a target="_blank" href="projects/bouncing-box/">Bouncing Box : A project that gives you a taste of game development on the web </a></li>
+          <li><a target="_blank" href="projects/circularity/">Circularity : A motion poem using random number generation and velocity applied to circle shapes...</a></li>
+        
+      </div>
+
+      <div class="extracurricular-section">
+        <h1 class="extracurricular-title" id="extracurricular-section">My Experience</h1>
+          
+      </div>
+
+      <div class="contact-section">
+        <h3 class="contact-title" id="contact-section">Contact Me</h3>
+          
       </div>
     
       
 
-
+    
     </body>
 </html>
 
