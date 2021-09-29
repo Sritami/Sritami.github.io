@@ -258,14 +258,14 @@ li a:hover {
 }
 
 .top-section-button {
-  background: white; 
-  color: #5E17EB; 
+  background: #0F0F0F; 
+  color: white;
   border: none;
   height: 38px;
   width: 100px;
   border-radius: 20px;
   padding: 10px;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   text-align: center;
   font-family: 'Poppins', sans-serif;
   transform: translate(550px, -35px);
@@ -281,17 +281,20 @@ li a:hover {
       
 }
 
-.top-section-button:hover {
-  background: #0F0F0F; 
-  color: white;
-
-
-}
-
 .top-section-button a {
+  color: white;
   text-decoration: none;
-  
+
 }
+
+
+
+.top-section-button:hover {
+  background: #F94144;
+
+
+}
+
 
 
 @keyframes button-rise {
@@ -318,13 +321,57 @@ li a:hover {
 /* ADD LATER??: add some cool artistry floruises by pic
 that changes when you hover over them */
 
+/* SKILLS SECTION */
+
+.skills-section {
+  width: 100%;
+  height: 20em;
+  margin-top: 39em;
+  position: absolute;
+  background-color: #0F0F0F;
+}
+
+.skills-title {
+  color: white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  text-shadow: #5E17EB 5px 5px 0px;
+  
+  
+}
+
+.skills-individual {
+  color: white;
+  font-size: 20px;
+  background-color: #5E17EB;
+  border-radius: 5px;
+  text-align: center;
+  width: 190px;
+  padding: 5px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.all-skills {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
 
 /* ABOUT US SECTION */
 
 .section-two {
   width: 100%;
   height: 40em;
-  margin-top: 39em;
+  margin-top: 59em;
   position: absolute;
   background-color: #F94144;
 }
@@ -381,7 +428,7 @@ that changes when you hover over them */
 .projects-section {
   width: 100%;
   height: 40em;
-  margin-top: 78em;
+  margin-top: 99em;
   position: absolute;
   background-color: #5E17EB;
 }
@@ -447,7 +494,7 @@ that changes when you hover over them */
 .extracurricular-section {
   width: 100%;
   height: 40em;
-  margin-top: 118em;
+  margin-top: 139em;
   position: absolute;
   background-color: #F94144;
   /* background-color would be white, with pink text or purple text */
@@ -487,7 +534,7 @@ that changes when you hover over them */
 .contact-section {
   width: 100%;
   height: 20em;
-  margin-top: 158em;
+  margin-top: 179em;
   position: absolute;
   /* background-color: #5A05AD; */
   background-color: #0F0F0F;
