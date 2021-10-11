@@ -11,12 +11,29 @@ function runProgram(){
   var FRAME_RATE = 60;
   var FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   
-  // Game Item Objects
+  var boardWidth = $("#board").width();	// the maximum X-Coordinate of the screen
+  var boardHeight = $("#board").height(); //the maximum Y-Coordinate of the screen
 
+  var positionX = 0; // the x-coordinate location for the box
+  var speedX = 0; // the speed for the box along the y-axis
+  var positionY = 0; // the x-coordinate location for the box
+  var speedY = 0; // the speed for the box along the y-axis
+
+  
+  // Game Item Objects
+  var KEY = {
+    "ENTER": 13,
+    "RIGHT": 39,
+    "LEFT": 37,
+    "TOP": 38,
+    "BOTTOM": 40,
+  }
+  
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('eventType', handleEvent);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);  
+  $(document).on('keyup', handleKeyUp);                            // change 'eventType' to the type of event you want to handle
 
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -27,22 +44,60 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
-
+    repositionGameItem();
+    redrawGameItem(); 
   }
   
   /* 
   Called in response to events.
   */
-  function handleEvent(event) {
+  function handleKeyDown(event) {
+    if (event.which === KEY.RIGHT) {
+      console.log("right key pressed");
+      speedX = 5; 
+    }
 
+    else if (event.which === KEY.LEFT) {
+      console.log("left key pressed");
+      speedX = -5; 
+    }
+
+    else if (event.which === KEY.TOP) {
+      console.log("top key pressed");
+      speedY = -5; 
+    }
+
+    else if (event.which === KEY.BOTTOM) {
+      console.log("bottom key pressed");
+      speedY = 5; 
+    }
+
+
+  }
+
+  function handleKeyUp(event) {
+    speedX = 0;
+    speedY = 0;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+
+  function repositionGameItem() {
+    positionX += speedX; // update position of box along the x-axis
+    positionY += speedY; // update position of box along the y-axis
   
+  }
+
+
+  function redrawGameItem() {
+    $("#gameItem").css("left", positionX);    // draw box in new location, positionX pixels away from "left"
+    $("#gameItem").css("top", positionY);    // draw box in new location, positionY pixels away from "top"
+  }
+
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
