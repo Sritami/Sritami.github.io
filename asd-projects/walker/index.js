@@ -22,7 +22,6 @@ function runProgram(){
   
   // Game Item Objects
   var KEY = {
-    "ENTER": 13,
     "RIGHT": 39,
     "LEFT": 37,
     "TOP": 38,
@@ -67,13 +66,30 @@ function runProgram(){
     else if (event.which === KEY.BOTTOM) {
       speedY = 5; 
     }
+  
 
 
   }
 
   function handleKeyUp(event) {
-    speedX = 0;
-    speedY = 0;
+    if (event.which === KEY.RIGHT) {
+        speedX = 0; 
+      }
+  
+    else if (event.which == KEY.LEFT) {
+        speedX = 0; 
+      }
+
+    else if (event.which == KEY.TOP) {
+        speedY = 0; 
+      }
+
+    else if (event.which == KEY.BOTTOM) {
+        speedY = 0; 
+      }
+
+
+
   }
 
   ////////////////////////////////////////////////////////////////////////////////
