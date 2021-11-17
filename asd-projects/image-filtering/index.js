@@ -44,6 +44,10 @@ function applyFilter(filterFunction) {
 
 // TODO 6: Create the applyFilterNoBackground function
 function applyFilterNoBackground(filterFunction) {
+   //background color - image[0][0] --> string
+   var background = image[0][0];
+
+
     //nested loop - iterates through rows of image array
     for (var r = 0; r < image.length; r++) {
 
@@ -51,15 +55,22 @@ function applyFilterNoBackground(filterFunction) {
         for (var c = 0; c < image[r].length; c++) {
             //assigning rgbString to each value of image array 
             var rgbString = image[r][c];
+
+
             //convert rgbString to array
-             var rgbNumbers = rgbStringToArray(rgbString);  
-             //iterates through rgbNumbers to check for values of 150
-             for (var i = 0; i < rgbNumbers.length; i++) {
-                //applying filter to arrays in rgbNumbers if all indexes are NOT equal to 150 
-                if (rgbNumbers[i] !== 150 && rgbNumbers[i + 1] !== 150 && rgbNumbers[i + 2] !== 150) {
+             var rgbNumbers = rgbStringToArray(rgbString); 
+             
+             //background color string --> array
+             var backgroundColor = rgbStringToArray(background);
+
+             //iterates through rgbNumbers to check for background values 
+            for (var i = 0; i < rgbNumbers.length; i++) {
+                //applying filter to arrays in rgbNumbers if all indexes are NOT equal to background Color
+                if (rgbNumbers[i] !== backgroundColor[RED] && rgbNumbers[i + 1] !== backgroundColor[GREEN] && rgbNumbers[i + 2] !== backgroundColor[BLUE]) {
                     filterFunction(rgbNumbers);
-               } 
-            } 
+            
+                } 
+            }   
 
             //convert rgbNumbers back into string 
              var addNewColors = rgbArrayToString(rgbNumbers);
@@ -70,7 +81,8 @@ function applyFilterNoBackground(filterFunction) {
           }
         
       }
-}
+    }
+
 
 
 
@@ -101,10 +113,9 @@ function increaseGreenByBlue(arr) {
 
 function keepInBounds(num) {
     //creating temp variable to make sure num is not less than 0
-    var result = Math.max(num, 0);
+    var limit = Math.max(num, 0);
     //returning 255 if num is over 255 
-    return Math.min(255, result);
+    return Math.min(255, limit);
 }
 
 
-// CHALLENGE code goes below here

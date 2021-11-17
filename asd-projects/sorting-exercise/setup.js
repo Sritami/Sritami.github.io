@@ -54,7 +54,7 @@ const quickClass = "quickElement";
 $(document).ready(function(){
     // resize the containers to fit everything
     let squareHeight = $(bubbleId).width() * (Math.min((1 / MAX_SQUARES * 100), MAX_SQUARE_WIDTH)/100);
-    console.log(squareHeight * 16);
+    //console.log(squareHeight * 16);
     
     $(bubbleId).height(squareHeight*MAX_SQUARES);
     $(quickId).height(squareHeight*MAX_SQUARES);

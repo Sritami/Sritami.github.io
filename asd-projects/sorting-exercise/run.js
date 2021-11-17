@@ -7,7 +7,7 @@ $(document).ready(function(){
         if (!STARTED){
             STARTED = true;
             bubbleSort(bubbleList);
-            quickSort(quickList, 0, quickList.length-1);
+            //quickSort(quickList, 0, quickList.length-1);
         }
     })
 })
