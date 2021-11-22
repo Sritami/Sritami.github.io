@@ -4,9 +4,10 @@ $(document).ready(function(){
     const $display = $('#display');
 
     // TODO: Call your apply function(s) here
-   applyFilterNoBackground(reddify);
-   applyFilterNoBackground(increaseGreenByBlue);
-   applyFilter(increaseGreenByBlue);
+    applyFilterNoBackground(reddify);
+    applyFilterNoBackground(increaseGreenByBlue);
+    applyFilter(increaseGreenByBlue);
+  
 
 
 
@@ -64,13 +65,12 @@ function applyFilterNoBackground(filterFunction) {
              var backgroundColor = rgbStringToArray(background);
 
              //iterates through rgbNumbers to check for background values 
-            for (var i = 0; i < rgbNumbers.length; i++) {
-                //applying filter to arrays in rgbNumbers if all indexes are NOT equal to background Color
-                if (rgbNumbers[i] !== backgroundColor[RED] && rgbNumbers[i + 1] !== backgroundColor[GREEN] && rgbNumbers[i + 2] !== backgroundColor[BLUE]) {
-                    filterFunction(rgbNumbers);
             
-                } 
-            }   
+            //applying filter to arrays in rgbNumbers if all indexes are NOT equal to background Color
+            if (rgbNumbers[RED] !== backgroundColor[RED] && rgbNumbers[GREEN] !== backgroundColor[GREEN] && rgbNumbers[BLUE] !== backgroundColor[BLUE]) {
+                filterFunction(rgbNumbers);
+            
+            } 
 
             //convert rgbNumbers back into string 
              var addNewColors = rgbArrayToString(rgbNumbers);
