@@ -61,16 +61,12 @@ function applyFilterNoBackground(filterFunction) {
             //convert rgbString to array
              var rgbNumbers = rgbStringToArray(rgbString); 
              
-             //background color string --> array
-             var backgroundColor = rgbStringToArray(background);
-
-             //iterates through rgbNumbers to check for background values 
-            
-            //applying filter to arrays in rgbNumbers if all indexes are NOT equal to background Color
-            if (rgbNumbers[RED] !== backgroundColor[RED] && rgbNumbers[GREEN] !== backgroundColor[GREEN] && rgbNumbers[BLUE] !== backgroundColor[BLUE]) {
+       
+            /*applying filter to values that are not 
+            equal to background color ([0][0]), which is (150,150,150), apply filter */
+            if (background !== rgbString) {
                 filterFunction(rgbNumbers);
-            
-            } 
+            }
 
             //convert rgbNumbers back into string 
              var addNewColors = rgbArrayToString(rgbNumbers);
