@@ -1,0 +1,35 @@
+User Story / Gameplay
+
+    1. Describe the gameplay
+        The game is a virtual ping-pong game, where a paddle, which you can move, 
+        hits a ball. If the ball makes it on the other side, then you gain a point.
+    2. What are the conditions when the game begins?
+        The board is set, and the paddle hits a ball. 
+    3. Does the game have an end? If so, what are the conditions for when it ends?
+        The game ends when someone earns 11 points. 
+    4. What ifs will there be?
+        One if would be if the ball hits the paddle and another if 
+        would be if the ball misses the paddle. 
+
+Visual Game Components:
+
+    1. What are the visual game components? For example, in Bouncing Box, the game components were the board and the box.
+        The game componenents are the two paddles on either side of the board
+        and the moving ball. 
+        - The board will be static.
+        - The paddles and the box will be animated.
+    2. What data will you need to manage each game component? For example, in Bouncing Box, the data values were positionX, speedX, and points.
+       I will need to manage the x and y coordinates and how it changes when the ball moves. 
+       Also, I will need to manage the speeed of the ball, keyboard input, board boundaries, and points. 
+
+Events / Logic: 
+
+    1. What events will occur in this game? (timer events, keyboard events, clicking events?)
+       When an arrow key is pressed (keyboard events), the paddle will move.
+    2. How do those events affect the data of the program?
+        They can either hit the ball or miss it, which manages the points system of the game.
+    3. For each "event", write out the high-level logic of what will happen. It is better (and tricky) to be as specific as you can while remaining high-level!
+        If the ball hits the paddle, bounce it and reverse the speed.
+        If the ball misses the paddles, update the variable for points. 
+        As the ball moves between different x and y values, update its position. 
+        If an arrow key is pressed, move the paddle to its corresponding key. 
