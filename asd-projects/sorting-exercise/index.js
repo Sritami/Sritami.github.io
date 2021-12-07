@@ -35,27 +35,73 @@ async function bubbleSort(array) {
             }
         }
     
-    
-    
-    
-    
-    
     }
 }
 
 // TODO 3: Implement quickSort
 async function quickSort(array, left, right) {
+    //making greater than 1 to make sure actually have values to sort
   if (array.length > 1) {
-      //calling partition function will store the partition index
+      /* defining pivot index (a.k.a the marker for sorting either 
+      on left side or right side) */
       var index = await partition(array, left, right);
-      //on substep 3
+    /*  if all the left values of the pivot index are less than it, 
+     sort the values */
+      if (left < index-1) {
+        await quickSort(array, left, index-1);
+      }
+      /* if all values right of pivot index are greater than it, 
+      sort the values  */
+      if (right > index) {
+        await quickSort(array, index, right);
+      }
 
   } 
+
 
 }
 
 
 // TODOs 4 & 5: Implement partition
+async function partition(array, left, right) {
+    /* picks the middle value between left and right values as the pivot
+    (it would be better for this to be random) */
+   var pivot = array[Math.floor((right + left)/2)].value;
+   
+   
+   /* searching for values that need to be swapped */
+   while(left < right) {
+       
+    
+        while(array[left].value < pivot) {
+            /* shift a value of left until it finds a value greater than 
+            the pivot value, if not, stays on left side */
+            // array[left].value += 1;
+            left++;
+        }
+
+        while(array[right].value > pivot) {
+                /* shift a value of right until it finds a value less than 
+            the pivot value, if not stays on right side */
+            // array[right].value -= 1;
+            right--;
+                
+        }
+
+        if (left < right) {
+            swap(array, left, right);
+            updateCounter(quickCounter);
+            await sleep();
+        }
+
+   }
+
+   return left + 1;
+
+   
+
+}
+
 
 
 // TODO 1: Implement swap
