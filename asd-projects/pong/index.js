@@ -10,6 +10,11 @@ function runProgram(){
   // Constant Variables
   const FRAME_RATE = 60;
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
+  const BOARD_WIDTH = $("#board").width();
+  const BOARD_HEIGHT = $("#board").height();
+  //not sure if have to create these variables - week 2 collisions
+  const BOARD_LEFT = 0;
+  const BOARD_RIGHT = 0; 
   
   // Game Item Objects - Factory Function 
   function Ball($id) {
@@ -59,7 +64,11 @@ function runProgram(){
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);       
-  $(document).on('keyup', handleKeyUp);                          
+  $(document).on('keyup', handleKeyUp);      
+  startBall();    
+
+  
+               
 
 
 
@@ -72,7 +81,8 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    
+    //move ball
+    moveObject(ball);  
 
   }
   
@@ -126,7 +136,45 @@ function handleKeyUp(event) {
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  
+  //gives ball starting point at center and intitial speed
+  function startBall() {
+      ball.x = 150;
+      ball.y = 150;
+      var randomNum1 = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
+      var randomNum2 = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
+      ball.speedX = randomNum1;
+      ball.speedY = randomNum2;
+      console.log('start ball is called');
+  }
+
+ 
+  //updates the game item's x & y positions as speed increases each frame
+  function moveObject(object) {
+    object.x = object.x + object.speedX;
+    object.y = object.y + object.speedY; 
+    $(object.id).css('left', object.x);
+    $(object.id).css('top', object.y);
+  }
+
+  function wallCollision(object) {
+    // if (object.x > BOARD_LEFT || object.y > BOARD_TOP || 
+    //     object.x + $(object.id).width() > BOARD_RIGHT ||
+    //     object.y + $(object.id).height() > BOARD_BOTTOM ) {
+    //    console.log('collided'); 
+    // }
+        /* 1. If an object's x value goes past the left 
+        side of the box, then it collided with it.
+        2.  If an object's y value goes past the 
+        top side of the box, then it collided with it.
+        3. If an object's x + width value goes past the 
+        right side of the box, then it collided with it.
+        4. If an object's y + height value goes past the 
+        bottom side of the box, then it collided with it.
+        */
+  }
+
+
+
   function endGame() {
     // stop the interval timer
     clearInterval(interval);
