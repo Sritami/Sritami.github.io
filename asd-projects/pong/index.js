@@ -12,9 +12,8 @@ function runProgram(){
   const FRAMES_PER_SECOND_INTERVAL = 1000 / FRAME_RATE;
   const BOARD_WIDTH = $("#board").width();
   const BOARD_HEIGHT = $("#board").height();
-  //not sure if have to create these variables - week 2 collisions
   const BOARD_LEFT = 0;
-  const BOARD_RIGHT = 0; 
+  const BOARD_TOP = 0; 
   
   // Game Item Objects - Factory Function 
   function Ball($id) {
@@ -65,7 +64,8 @@ function runProgram(){
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);       
   $(document).on('keyup', handleKeyUp);      
-  startBall();    
+  startBall();  
+
 
   
                
@@ -82,7 +82,10 @@ function runProgram(){
   */
   function newFrame() {
     //move ball
-    moveObject(ball);  
+    moveObject(ball); 
+    moveObject(rightPaddle); 
+    moveObject(leftPaddle);
+    wallCollision(ball);
 
   }
   
@@ -157,21 +160,34 @@ function handleKeyUp(event) {
   }
 
   function wallCollision(object) {
-    // if (object.x > BOARD_LEFT || object.y > BOARD_TOP || 
-    //     object.x + $(object.id).width() > BOARD_RIGHT ||
-    //     object.y + $(object.id).height() > BOARD_BOTTOM ) {
-    //    console.log('collided'); 
-    // }
-        /* 1. If an object's x value goes past the left 
-        side of the box, then it collided with it.
-        2.  If an object's y value goes past the 
-        top side of the box, then it collided with it.
-        3. If an object's x + width value goes past the 
-        right side of the box, then it collided with it.
-        4. If an object's y + height value goes past the 
-        bottom side of the box, then it collided with it.
-        */
+    console.log(BOARD_WIDTH);
+    if (object.x < BOARD_LEFT) {
+      // left wall  - change speed to positive x
+  
+        console.log('left wall collided');    
+        object.speedX = object.speedX * -1;  
+        
+    } else if (object.x > BOARD_WIDTH) {
+      console.log()
+      //right wall - change speed to negative x
+       console.log('right wall collided'); 
+       object.speedX = -object.speedX;
+
+
+   } else if (object.y > BOARD_HEIGHT) {
+       //bottom wall - change speed to negative y
+       console.log('bottom wall collided');
+       object.speedY = -object.speedY;
+
+   } else if (object.y < BOARD_TOP) {
+     // top wall  - change speed to positive y
+       console.log('top wall collided');
+       object.speedY = object.speedY * -1; 
+      
+   }
   }
+
+
 
 
 
