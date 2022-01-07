@@ -32,7 +32,7 @@ body {
 
   /* positioning */
   position: absolute;
-  left: 300px;  /* Uncomment if you want to set a "starting" position */
+  left: 415px;  /* Uncomment if you want to set a "starting" position */
   top: 100px;   /* Uncomment if you want to set a "starting" position */
 }
 
@@ -44,7 +44,7 @@ body {
 
   /* positioning */
   position: absolute;
-  left: 100px;  /* Uncomment if you want to set a "starting" position */
-  top: 100px;   /* Uncomment if you want to set a "starting" position */
+  left: 5px;  /* Uncomment if you want to set a "starting" position */
+  top: 150px;   /* Uncomment if you want to set a "starting" position */
 }
 

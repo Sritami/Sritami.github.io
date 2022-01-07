@@ -33,6 +33,7 @@ function runProgram(){
     rightPaddle.y = parseFloat($($id).css('top'));
     rightPaddle.speedX = 0;
     rightPaddle.speedY = 0;
+    rightPaddle.height = parseFloat($($id).height());
     return rightPaddle;
   }
 
@@ -43,6 +44,7 @@ function runProgram(){
     leftPaddle.y = parseFloat($($id).css('top'));
     leftPaddle.speedX = 0;
     leftPaddle.speedY = 0;
+    leftPaddle.height = parseFloat($($id).height());
     return leftPaddle;
   }
 
@@ -85,7 +87,9 @@ function runProgram(){
     moveObject(ball); 
     moveObject(rightPaddle); 
     moveObject(leftPaddle);
-    wallCollision(ball);
+    wallCollisionBall(ball);
+    wallCollision(rightPaddle);
+    wallCollision(leftPaddle);
 
   }
   
@@ -94,19 +98,19 @@ function runProgram(){
   */
   function handleKeyDown(event) {
     if (event.which === KEY.TOP) {
-      speedX = -5; 
+      rightPaddle.speedY = -5; 
     }
 
     else if (event.which === KEY.BOTTOM) {
-      speedY = 5;  
+      rightPaddle.speedY = 5;  
     }
 
     else if (event.which === KEY.W) {
-      speedY = -5; 
+      leftPaddle.speedY = -5; 
     }
 
     else if (event.which === KEY.S) {
-      speedY = 5; 
+      leftPaddle.speedY = 5; 
     }
   
 
@@ -115,19 +119,19 @@ function runProgram(){
 
 function handleKeyUp(event) {
     if (event.which === KEY.TOP) {
-        speedX = 0; 
+        rightPaddle.speedY = 0; 
       }
   
     else if (event.which == KEY.BOTTOM) {
-        speedX = 0; 
+        rightPaddle.speedY = 0; 
       }
 
     else if (event.which == KEY.W) {
-        speedY = 0; 
+        leftPaddle.speedY = 0; 
       }
 
     else if (event.which == KEY.S) {
-        speedY = 0; 
+        leftPaddle.speedY = 0; 
       }
 
 
@@ -147,7 +151,6 @@ function handleKeyUp(event) {
       var randomNum2 = (Math.random() * 3 + 2) * (Math.random() > 0.5 ? -1 : 1);
       ball.speedX = randomNum1;
       ball.speedY = randomNum2;
-      console.log('start ball is called');
   }
 
  
@@ -159,30 +162,40 @@ function handleKeyUp(event) {
     $(object.id).css('top', object.y);
   }
 
-  function wallCollision(object) {
-    console.log(BOARD_WIDTH);
+  //wall collision specifically for the ball
+  function wallCollisionBall(object) {
     if (object.x < BOARD_LEFT) {
-      // left wall  - change speed to positive x
-  
-        console.log('left wall collided');    
+      // left wall  - change speed to positive x 
         object.speedX = object.speedX * -1;  
         
     } else if (object.x > BOARD_WIDTH) {
       console.log()
       //right wall - change speed to negative x
-       console.log('right wall collided'); 
        object.speedX = -object.speedX;
 
 
    } else if (object.y > BOARD_HEIGHT) {
        //bottom wall - change speed to negative y
-       console.log('bottom wall collided');
        object.speedY = -object.speedY;
 
    } else if (object.y < BOARD_TOP) {
      // top wall  - change speed to positive y
-       console.log('top wall collided');
        object.speedY = object.speedY * -1; 
+      
+   }
+  }
+
+
+  // wall collision for paddles 
+  function wallCollision(object) {
+    if (object.y > BOARD_HEIGHT - object.height) {
+      // - change speed to positive x 
+       object.y = BOARD_HEIGHT - object.height;
+       //object.speedY = 0; 
+        
+    } else if (object.y < BOARD_TOP) {
+     // top wall  - change speed to positive 
+     object.y = BOARD_TOP;
       
    }
   }
