@@ -20,8 +20,8 @@ body {
 
   /* positioning */
   position: absolute;
-  left: 150px;  /* Uncomment if you want to set a "starting" position */
-  top: 100px;   /* Uncomment if you want to set a "starting" position */
+  left: 150px;  
+  top: 100px;  
 }
 
 #rightPaddle {
@@ -32,8 +32,8 @@ body {
 
   /* positioning */
   position: absolute;
-  left: 415px;  /* Uncomment if you want to set a "starting" position */
-  top: 100px;   /* Uncomment if you want to set a "starting" position */
+  left: 415px; 
+  top: 100px;  
 }
 
 #leftPaddle {
@@ -44,7 +44,26 @@ body {
 
   /* positioning */
   position: absolute;
-  left: 5px;  /* Uncomment if you want to set a "starting" position */
-  top: 150px;   /* Uncomment if you want to set a "starting" position */
+  left: 5px;  
+  top: 150px;  
 }
+
+#player1Score {
+   font-size: 50px;
+   position: absolute;
+   left: 50px;
+   color: #F94144;
+   top: 30px; 
+   font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+#player2Score {
+  font-size: 50px;
+  position: absolute;
+  left: 350px;
+  color: #5E17EB;
+  top: 30px; 
+  font-family: 'Mochiy Pop P One', sans-serif;
+}
+
 

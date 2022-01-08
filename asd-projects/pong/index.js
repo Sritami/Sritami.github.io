@@ -65,7 +65,9 @@ function runProgram(){
   // one-time setup
   let interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);       
-  $(document).on('keyup', handleKeyUp);      
+  $(document).on('keyup', handleKeyUp);   
+  var updatedScorePlayer1 = 0;   //if ball hits rights wall
+  var updatedScorePlayer2 = 0; //if ball hits left wall
   startBall();  
 
 
@@ -83,13 +85,15 @@ function runProgram(){
   by calling this function and executing the code inside.
   */
   function newFrame() {
-    //move ball
     moveObject(ball); 
     moveObject(rightPaddle); 
     moveObject(leftPaddle);
     wallCollisionBall(ball);
     wallCollision(rightPaddle);
     wallCollision(leftPaddle);
+    doCollide(ball, rightPaddle);
+    doCollide(ball, leftPaddle);
+    finalizeScore();
 
   }
   
@@ -166,13 +170,25 @@ function handleKeyUp(event) {
   function wallCollisionBall(object) {
     if (object.x < BOARD_LEFT) {
       // left wall  - change speed to positive x 
-        object.speedX = object.speedX * -1;  
+        object.speedX = object.speedX * -1; 
+
+        //update player 2 score
+        updatedScorePlayer2 += 1;
+        $("#player2Score").text(updatedScorePlayer2); 
+
+        //reset ball
+        startBall();
         
     } else if (object.x > BOARD_WIDTH) {
-      console.log()
       //right wall - change speed to negative x
        object.speedX = -object.speedX;
 
+       //update player 2 score
+       updatedScorePlayer1 += 1;
+       $("#player1Score").text(updatedScorePlayer1);
+
+       //reset ball
+       startBall();
 
    } else if (object.y > BOARD_HEIGHT) {
        //bottom wall - change speed to negative y
@@ -200,7 +216,32 @@ function handleKeyUp(event) {
    }
   }
 
+  // if two objects collide, the first object is bounced back
+  function doCollide(obj1, obj2) {
+    obj1.left = obj1.x;
+    obj1.top = obj1.y;
+    obj1.right = obj1.x + $(obj1.id).width();
+    obj1.bottom = obj1.y + $(obj1.id).height();
+    
+    obj2.left = obj2.x;
+    obj2.top = obj2.y;
+    obj2.right = obj2.x + $(obj2.id).width();
+    obj2.bottom = obj2.bottom = obj2.y + $(obj2.id).height();
 
+    if (obj2.right > obj1.left && obj2.left < obj1.right &&
+      obj2.bottom > obj1.top && obj2.top < obj1.bottom) {
+       obj1.speedX = -obj1.speedX;
+     }
+     
+
+  }
+
+   function finalizeScore() {
+     //if either player reaches a score of 10, games ends
+     if (updatedScorePlayer1 == 10 || updatedScorePlayer2 == 10) {
+       endGame();
+     }
+   }
 
 
 
