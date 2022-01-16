@@ -16,42 +16,23 @@ function runProgram(){
   const BOARD_TOP = 0; 
   
   // Game Item Objects - Factory Function 
-  function Ball($id) {
-    var ball = {};
-    ball.id = $id;
-    ball.x = parseFloat($($id).css('left'));
-    ball.y = parseFloat($($id).css('top'));
-    ball.speedX = 0;
-    ball.speedY = 0;
-    return ball;
-  }
 
-  function RightPaddle($id) {
-    var rightPaddle = {};
-    rightPaddle.id = $id;
-    rightPaddle.x = parseFloat($($id).css('left'));
-    rightPaddle.y = parseFloat($($id).css('top'));
-    rightPaddle.speedX = 0;
-    rightPaddle.speedY = 0;
-    rightPaddle.height = parseFloat($($id).height());
-    return rightPaddle;
-  }
-
-  function LeftPaddle($id) {
-    var leftPaddle = {};
-    leftPaddle.id = $id;
-    leftPaddle.x = parseFloat($($id).css('left'));
-    leftPaddle.y = parseFloat($($id).css('top'));
-    leftPaddle.speedX = 0;
-    leftPaddle.speedY = 0;
-    leftPaddle.height = parseFloat($($id).height());
-    return leftPaddle;
+  function CreateObject($id) {
+    var gameItem = {};
+    gameItem.id = $id;
+    gameItem.x = parseFloat($($id).css('left'));
+    gameItem.y = parseFloat($($id).css('top'));
+    gameItem.speedX = 0;
+    gameItem.speedY = 0;
+    gameItem.height = parseFloat($($id).height());
+    gameItem.width = parseFloat($($id).width());
+    return gameItem;
   }
 
  //Game Item Objects - Initialization
- var ball = Ball('#ball');
- var rightPaddle = RightPaddle('#rightPaddle');
- var leftPaddle = LeftPaddle('#leftPaddle');
+ var ball = CreateObject('#ball');
+ var rightPaddle = CreateObject('#rightPaddle');
+ var leftPaddle = CreateObject('#leftPaddle');
 
 
  //Game Item Objects - keyboard events 
@@ -168,8 +149,10 @@ function handleKeyUp(event) {
 
   //wall collision specifically for the ball
   function wallCollisionBall(object) {
+
+    //left wall
     if (object.x < BOARD_LEFT) {
-      // left wall  - change speed to positive x 
+      //change speed to positive x 
         object.speedX = object.speedX * -1; 
 
         //update player 2 score
@@ -179,8 +162,10 @@ function handleKeyUp(event) {
         //reset ball
         startBall();
         
-    } else if (object.x > BOARD_WIDTH) {
-      //right wall - change speed to negative x
+
+    //right wall 
+    } else if ((object.x + object.width) > BOARD_WIDTH) {
+      //change speed to negative x
        object.speedX = -object.speedX;
 
        //update player 2 score
@@ -190,12 +175,15 @@ function handleKeyUp(event) {
        //reset ball
        startBall();
 
-   } else if (object.y > BOARD_HEIGHT) {
-       //bottom wall - change speed to negative y
+   //bottom wall     
+   } else if ((object.y + object.height) > BOARD_HEIGHT) {
+    //change speed to negative y
        object.speedY = -object.speedY;
+       
 
+    //top wall   
    } else if (object.y < BOARD_TOP) {
-     // top wall  - change speed to positive y
+     //change speed to positive y
        object.speedY = object.speedY * -1; 
       
    }
